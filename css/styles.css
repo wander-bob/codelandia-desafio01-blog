@@ -14,6 +14,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--dark-60);
 }
 body, html{
   font-family: 'Inter', sans-serif;
@@ -24,12 +25,17 @@ a {
 input, textarea, button, fieldset {
   border: none;
 }
+body {
+  background: var(--dark-10);
+}
 #app{
-  width: 100%; 
+ display: grid;
+ height: 100vh;
 }
 .header {
+  height: 29rem;
   width: 100%;
-  padding-block: 6.4rem;
+  padding: 6.4rem 12rem;
   background: var(--dark-20);
   display: grid;
   justify-content: center;
@@ -46,23 +52,95 @@ input, textarea, button, fieldset {
   color: var(--brand-color);
 }
 .header .input-wrapper { 
-  min-width: 65vw;
+  width: 80vw;
   display: flex;
   align-items: center;
+  padding: 2rem 2.6rem;
   gap: 2rem;
   background-color: var(--dark-30);
-  border-radius: .8rem;
   border: 2px solid var(--dark-40);
-  padding: 2rem 2.6rem;
+  border-radius: .8rem;
 }
-.header .input-wrapper input { 
-  background-color: transparent;
+.header .input-wrapper input {
+  display: inline-block; 
+  
   height: 100%;
-  width: 100%;
+  background-color: transparent;
+  font-family: 'Inter';
+  color: var(--dark-60);
+  font-size: 2rem;
+  height: 500;
 }
 .header .input-wrapper input::placeholder { 
   font-family: 'Inter';
   color: var(--dark-50);
   font-size: 2rem;
   height: 500;
+}
+main#blog-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  padding: 8rem 12rem;
+}
+main#blog-posts article{
+  min-width: 65vw;
+  padding: 4rem;
+  background-color: var(--dark-20);
+  border: 2px solid var(--dark-30);
+  border-radius: .8rem;
+  transition: border 0.25s;
+}
+main#blog-posts article:hover {
+  border: 2px solid var(--brand-color);
+}
+main#blog-posts article .post-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+main#blog-posts article .post-info small {
+  color: var(--brand-color);
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+main#blog-posts article .post-info button {
+  height: 4rem;
+  width: 4rem;
+  background-color: transparent;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main#blog-posts article .post-info button.button-favorite{
+  background-image: url(../assets/heart.svg);
+}
+main#blog-posts article .post-info button.button-favorite.active{
+  background-image: url(../assets/heart-ative.svg);
+
+}
+main#blog-posts article h2 {
+  margin-bottom: 1.6rem;
+  font-family: 'Space Grotesk';
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+main#blog-posts article p {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  font-weight: 500;
+  color: var(--dark-50);
+}
+
+/* Tabled */
+@media (max-width: 768px){
+  body {
+    
+  }
 }

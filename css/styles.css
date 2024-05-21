@@ -37,8 +37,6 @@ body {
   width: 100%;
   padding: 6.4rem 12rem;
   background: var(--dark-20);
-  display: grid;
-  justify-content: center;
 }
 .header h1 {
   font-size: 4rem;
@@ -52,7 +50,6 @@ body {
   color: var(--brand-color);
 }
 .header .input-wrapper { 
-  width: 80vw;
   display: flex;
   align-items: center;
   padding: 2rem 2.6rem;
@@ -138,9 +135,21 @@ main#blog-posts article p {
   color: var(--dark-50);
 }
 
-/* Tabled */
+/* Tablet */
 @media (max-width: 768px){
-  body {
-    
+  .header {
+    padding: 6.4rem 3.2rem;
+  }
+  main#blog-posts {
+    padding: 5.6rem 3.2rem;   
+  }
+}
+/* Mobile */
+@media (max-width: 375px){
+  .header {
+    padding: 4.8rem 2.4rem;
+  }
+  main#blog-posts {
+    padding: 4rem 2.4rem;   
   }
 }
